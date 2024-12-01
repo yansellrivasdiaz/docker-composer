@@ -11,7 +11,8 @@ RUN apk update \
 && docker-php-ext-install zip \
 && apk add --no-cache libpng libpng-dev \
 && docker-php-ext-install gd \
-&& apk del libpng-dev
+&& apk del libpng-dev \
+&& docker-php-ext-install pdo_mysql
 
 COPY ./custom.ini /usr/local/etc/php/conf.d/
 
